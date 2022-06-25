@@ -2,22 +2,44 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Seokha Kang</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
       <h1>My Portfolio</h1>
-      <p>This is my portfolio. Seokha Kang</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <a href="https://github.com/seokhakang9/software-product-sprint" target="_blank"> My Github Link</a>
+      <img src="images/dog.png" width="50%" height="50%"/>
+      <p><a href="https://github.com/seokhakang9/software-product-sprint" target="_blank"> My Github Link</a></p>
+      <p>Click here to get a random greeting message in another language:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
-      
-      <img src="images/cat.jpg" width="50%" height="50%"/>
+      <p>Hi! I'm Seokha Kang studying Computer Science at UCR.</p>
+      <p></p>
+      <p></p>
+      <form action="/form-handler" method="POST">
+        <p>Enter some text to send me here:</p>
+        <textarea name="text-input">hello world</textarea>
+        <br/>
+        <input type="submit" />
+      </form>
+      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+      <p>Click <a href="/page-views">here</a> to check page views.</p>
       <br>
     </div>
+    <body onload="loadTasks()">
+        <h1>Todo List</h1>
+    
+        <form method="POST" action="/new-task">
+          <input type="text" name="title" />
+          <br/>
+          <button>Submit</button>
+        </form>
+    
+        <hr/>
+    
+        <ul id="task-list"></ul>
+    
+      </body>
   </body>
 </html>
