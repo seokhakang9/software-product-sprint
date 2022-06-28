@@ -11,7 +11,7 @@ function addRandomGreeting() {
 }
 /** Fetches tasks from the server and adds them to the DOM. */
 function loadTasks() {
-    fetch('/list-tasks').then(response => response.json()).then((tasks) => {
+    fetch('/tasks', {method: 'GET'}).then(response => response.json()).then((tasks) => {
       const taskListElement = document.getElementById('task-list');
       tasks.forEach((task) => {
         taskListElement.appendChild(createTaskElement(task));
@@ -41,10 +41,11 @@ function createTaskElement(task) {
     return taskElement;
   }
   
-  /** Tells the server to delete the task. */
+/** Tells the server to delete the task. */
 function deleteTask(task) {
-    const params = new URLSearchParams();
-    params.append('id', task.id);
-    fetch('/delete-task', {method: 'POST', body: params});
+    fetch('/tasks?' +
+         new URLSearchParams({task_id: task.id}),
+         {method: 'DELETE'}
+         );
 }
   
