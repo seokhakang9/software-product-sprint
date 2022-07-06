@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Seokha Kang</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0s69v5OFVxuH0cN5IS96B3jwhnjB7tTo"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlz0NQ1mc6_UU6OHExGKIrpnkJ5q9BqPs"></script> -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
@@ -33,13 +35,20 @@
         <form method="POST" action="/tasks">
           <input type="text" name="title" />
           <br/>
-          <button onclick="">Submit</button>
+          <button onclick="attachElement()">Submit</button>
         </form>
     
         <hr/>
     
         <ul id="task-list"></ul>
-    
     </body>
+    <p>Event Information</p>
+    <p>Name:</p>
+    <p>Description:</p>
+    <p>Name of Location:</p>
+    <p>Date:</p>
+    <body onload="createMap();">
+        <div id="map"></div>
+        <p>This page shows a Google Map!</p>
   </body>
 </html>

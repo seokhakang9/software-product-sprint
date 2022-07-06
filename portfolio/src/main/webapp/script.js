@@ -18,7 +18,11 @@ function loadTasks() {
       })
     });
 }
-  
+function attachElement(){
+    console.log(documents.getElementById("title").value); 
+    const taskElement = document.getElementById('task-list');
+    taskListElement.appendChild(createTaskElement);
+}
 /** Creates an element that represents a task, including its delete button. */
 function createTaskElement(task) {
     const taskElement = document.createElement('li');
@@ -48,4 +52,16 @@ function deleteTask(task) {
          {method: 'DELETE'}
          );
 }
+
+function createMap() {
+    const map = new google.maps.Map(
+        document.getElementById('map'),
+        {center: {lat: 33.97919947216425, lng: -117.32849493862577}, zoom: 16});
+
+    const trexMarker = new google.maps.Marker({
+      position: {lat: 33.97919947216425, lng: -117.32849493862577},
+      map: map,
+      title: 'Cycle Bun'
+    });
+} 
   
